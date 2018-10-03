@@ -55,10 +55,29 @@ public class Fraction {
 		
 	}
 	
+	public boolean equals(Fraction f1,Fraction f2) {
+		long l1,l2;
+		
+		l1=f1.getA()*f2.getB();
+		l2=f2.getA()*f1.getB();
+		if(l1==l2)return true;
+		else return false;		
+		
+		
+	}
+	
+	public String convert(Fraction f) {
+		String somme;
+		somme = Integer.toString(f.getA()) +"/" +Integer.toString(f.getB());
+		
+		return somme;
+	}
+	
 	public static void main(String[] args){
 		Fraction fraction = new Fraction(5,6);
 		fraction.Mult(new Fraction(3, 2));
 		System.out.println(fraction.getA());
 		System.out.println(fraction.getB());
+		System.out.println(fraction.convert(fraction));
 	}
 }
