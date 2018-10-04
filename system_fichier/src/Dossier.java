@@ -5,7 +5,12 @@ import java.util.ArrayList;
 public class Dossier extends superclass{
 	
 	private ArrayList<superclass> liste;
-	//al = new ArrayList();
+
+	
+	public int explore() {
+		
+		return 1;
+	}
 	
 	public Dossier() {
 		this.nom="";
