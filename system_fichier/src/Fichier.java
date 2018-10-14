@@ -11,5 +11,12 @@ public class Fichier extends superclass{
 		 return this.taille;
 		 
 	 }
+	    public boolean verifProblem(superclass d) {
+	    		return false;
+	    }
+	    public boolean recursive (superclass d) {
+	    	return false;
+	    	
+	    }
 	
 }

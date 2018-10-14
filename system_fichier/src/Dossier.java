@@ -8,13 +8,13 @@ public class Dossier extends superclass{
 
 	
 	public int explore() {
-		
 		return 1;
 	}
 	
+	
 	public Dossier() {
 		this.nom="";
-		this.liste= new ArrayList();
+		this.liste= new ArrayList<superclass>();
 	}
 	
 	
@@ -38,13 +38,15 @@ public class Dossier extends superclass{
 		return somme;
 	}
 
-    public Boolean verifProblem(superclass d) {
+    public boolean verifProblem(superclass d) {
     	
     	if (this == d)
     		return true;
     	else 
     		return false;
     }
+    
+    // verifie que tout les element du dossier ne sont pas le dossier lui meme
 	public boolean verifintern () {
 		
 			boolean somme=false;
@@ -53,8 +55,18 @@ public class Dossier extends superclass{
 			}   
 			return somme;
 		
-		
-		verif(this);
-		
 	}
+	
+	// je me base sur le fait que je sait que j'ai un dossier 
+	// meme si je fait mes operation sur un objet superclass
+	public boolean recursive (superclass d) { // dossier a verifier
+		
+		boolean somme=false;
+		for(int i = 0; i <this.liste.size(); i++){
+			somme = somme && this.liste.get(i).verifProblem(this) && this.liste.get(i).recursive(d);	
+		}   
+		return somme;
+	
+}
+	
 }
