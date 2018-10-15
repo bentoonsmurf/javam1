@@ -12,11 +12,10 @@ public class Dossier extends superclass{
 	}
 	
 	
-	public Dossier() {
-		this.nom="";
+	Dossier(String nom) {
+		super(nom);
 		this.liste= new ArrayList<superclass>();
 	}
-	
 	
 	public void add(superclass d) {
 		this.liste.add(d);
