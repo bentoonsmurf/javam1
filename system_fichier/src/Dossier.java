@@ -1,20 +1,17 @@
 import java.util.ArrayList;
  
-
-
 public class Dossier extends superclass{
 	
 	private ArrayList<superclass> liste;
-
 	
 	public int explore() {
 		
 		return 1;
 	}
 	
-	public Dossier() {
-		this.nom="";
-		this.liste= new ArrayList();
+	 Dossier(String nom) {
+		this.nom=nom;
+		this.liste= new ArrayList<superclass>();
 	}
 	
 	
@@ -38,7 +35,7 @@ public class Dossier extends superclass{
 		return somme;
 	}
 
-    public Boolean verifProblem(superclass d) {
+    public boolean verifProblem(superclass d) {
     	
     	if (this == d)
     		return true;
@@ -54,7 +51,7 @@ public class Dossier extends superclass{
 			return somme;
 		
 		
-		verif(this);
+		//verif(this);
 		
 	}
 }
