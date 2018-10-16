@@ -2,6 +2,12 @@
 public class Fichier extends superclass{
 
 	private int taille;
+	
+	Fichier(String nom, int taille){
+		super(nom);
+		this.taille=taille;
+	}
+	
 	 public int explore() {
 		 return 1;
 		 
