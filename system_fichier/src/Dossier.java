@@ -18,7 +18,12 @@ public class Dossier extends superclass{
 	}
 	
 	public void add(superclass d) {
-		this.liste.add(d);
+		if (verifProblem(d)==true)
+			System.out.println("Cette opération ne peut aboutir. Le dossier ne peut être créé dans lui même");
+		else if (recursive(d)==true)
+			System.out.println("Cette opération ne peut aboutir. Le dossier ne peut être créé dans lui même");
+		else
+			this.liste.add(d);
 		
 	}
 	
@@ -44,8 +49,8 @@ public class Dossier extends superclass{
     	else 
     		return false;
     }
-    
-    // verifie que tout les element du dossier ne sont pas le dossier lui meme
+     
+    // verifie que tout les elements du dossier ne sont pas le dossier lui meme
 	public boolean verifintern () {
 		
 			boolean somme=false;
@@ -67,5 +72,6 @@ public class Dossier extends superclass{
 		return somme;
 	
 }
+
 	
 }
