@@ -19,11 +19,14 @@ public class Dossier extends superclass{
 	
 	public void add(superclass d) {
 		if (verifProblem(d)==true)
-			System.out.println("Cette opération ne peut aboutir. Le dossier ne peut être créé dans lui même");
-		else if (recursive(d)==true)
-			System.out.println("Cette opération ne peut aboutir. Le dossier ne peut être créé dans lui même");
-		else
+			 System.out.println("Cette opération ne peut aboutir. Le dossier ne peut être créé dans lui même");
+		else if (verif_parents(d)==true)
+			System.out.println("Cette opération ne peut aboutir. Le dossier ne peut être créé dans un de ses fils");
+		else{
+			d.parent=this;
 			this.liste.add(d);
+			
+		}
 		
 	}
 	
@@ -63,7 +66,7 @@ public class Dossier extends superclass{
 	
 	// je me base sur le fait que je sait que j'ai un dossier 
 	// meme si je fait mes operation sur un objet superclass
-	public boolean recursive (superclass d) { // dossier a verifier
+	/*public boolean recursive (superclass d) { // dossier a verifier
 		
 		boolean somme=false;
 		for(int i = 0; i <this.liste.size(); i++){
@@ -71,7 +74,25 @@ public class Dossier extends superclass{
 		}   
 		return somme;
 	
-}
+	}*/
+	
+	public boolean verif_parents (superclass d) { // ajout d'un pointeur parentns à la classe et chaque element va pointer sur son parent ou sur null
+
+		boolean somme=false;
+		superclass temp;
+		
+		temp=this.parent;
+			
+		while(temp!=null){
+			
+			if(temp==d)
+				somme= true;
+			else
+				temp=temp.parent;
+					
+		}
+		return somme;
+	}
 
 	
 }

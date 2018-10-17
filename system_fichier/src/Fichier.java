@@ -7,7 +7,7 @@ public class Fichier extends superclass{
 		super(nom);
 		this.taille=taille;
 	}
-	
+	 
 	 public int explore() {
 		 return 1;
 		 
