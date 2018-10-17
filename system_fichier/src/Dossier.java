@@ -45,16 +45,7 @@ public class Dossier extends superclass{
     	else 
     		return false;
     }
-	public boolean verifintern () {
-		
-			boolean somme=false;
-			for(int i = 0; i <this.liste.size(); i++){
-				somme = somme && this.liste.get(i).verifProblem(this);	
-			}   
-			return somme;
-		
-		
-		verif(this);
+	
 		
 	}
 }
