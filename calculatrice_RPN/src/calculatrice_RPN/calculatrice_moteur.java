@@ -11,13 +11,11 @@ public class calculatrice_moteur {
 		
 	}// push(E)  pop()   peek() 
 	
-	public float executer_calcul() {
+	public void empiler_chiffre(chiffre_reel c) {
 		
-		
-		
-		
-		return 0;
+		this.pile.push(c);
 	}
+
 	
 	public float eval (float a1,float a2 ,operation op) {
 		

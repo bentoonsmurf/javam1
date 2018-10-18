@@ -1,5 +1,7 @@
 package calculatrice_RPN;
 
+
+// il manque extends element 
 public enum operation {// enum =Class avec un nombre d'instances limité
 	plus,
 	moins,
