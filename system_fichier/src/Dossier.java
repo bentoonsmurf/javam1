@@ -1,6 +1,5 @@
+//Classe Dossier 
 import java.util.ArrayList;
- 
-
 
 public class Dossier extends superclass{
 	
@@ -48,4 +47,4 @@ public class Dossier extends superclass{
 	
 		
 	}
-}
+
