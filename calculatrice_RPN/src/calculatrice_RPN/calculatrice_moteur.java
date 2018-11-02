@@ -2,7 +2,7 @@ package calculatrice_RPN;
 
 import java.util.Stack;
 
-public class calculatrice_moteur {
+public class calculatrice_moteur extends Operation{
 	
 	private Stack<element> pile;
 	
@@ -23,6 +23,31 @@ public class calculatrice_moteur {
 		if (op==operation.moins) return a1 - a2;
 		if (op==operation.mult) return a1 * a2;
 		if (op==operation.div) return a1 / a2;
+		return 0;
+	}
+
+	double eval(double a, double b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	double evalPlus(double a, double b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	double evalMoins(double a, double b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	double evalMult(double a, double b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	double evalDiv(double a, double b) {
+		// TODO Auto-generated method stub
 		return 0;
 	}
 }
