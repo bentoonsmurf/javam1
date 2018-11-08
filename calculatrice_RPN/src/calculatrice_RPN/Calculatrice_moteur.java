@@ -4,10 +4,10 @@ import java.util.Stack;
 
 public class calculatrice_moteur extends Operation{
 	
-	private Stack<element> pile;
+	private Stack<element> piles;
 	
 	public calculatrice_moteur() {
-		this.pile = new Stack<element>();
+		this.piles = new Stack<element>();
 		
 	}// push(E)  pop()   peek() 
 	
