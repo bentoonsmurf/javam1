@@ -9,7 +9,7 @@ public abstract class Operation extends element {// enum =Class avec un nombre d
 	final char MULT='*';
 	final char DIV='/';
 	
-	private char symbole;
+	protected char symbole;
 	
 	
 	/*private Operation() {	
@@ -22,9 +22,6 @@ public abstract class Operation extends element {// enum =Class avec un nombre d
 		
 	}
 	
-	abstract double eval(double a, double b, char c);
-	abstract double evalPlus(double a, double b);
-	abstract double evalMoins(double a, double b);
-	abstract double evalMult(double a, double b);
-	abstract double evalDiv(double a, double b);
+	abstract double eval(double a, double b, Operation op);
+	
 }

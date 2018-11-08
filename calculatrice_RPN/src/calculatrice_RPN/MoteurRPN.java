@@ -6,11 +6,12 @@ public class MoteurRPN extends Operation{
 	
 	final double MAX_VALUE=100;
 	final double MIN_VALUE=1;
+
 	
 	private Stack<Double> pile;
 	
 	public MoteurRPN() {
-		super('A');
+		super('+');
 		this.pile = new Stack<Double>();
 		
 	}// push(E)  pop()   peek() 
@@ -21,44 +22,20 @@ public class MoteurRPN extends Operation{
 	}
 
 	
-	/*public float eval (float a1,float a2 ,operation op) {
+	public double eval (double a1,double a2 , Operation op) {
 		
-		if (op==operation.plus) return a1 + a2;
-		if (op==operation.moins) return a1 - a2;
-		if (op==operation.mult) return a1 * a2;
-		if (op==operation.div) return a1 / a2;
-		return 0;
-	}*/
-
-	double eval(double a, double b, char c) {
-		
-		/*if (c==PLUS)
-			pile.push(evalPlus( a,  b));
-		if (c==MOINS)
-			pile.push(evalMoins( a,  b));
-		if (c==MOINS)
-			pile.push(evalMoins( a,  b));*/
-		
+		if (op.symbole==op.PLUS) return a1 + a2;
+		if (op.symbole==op.MOINS) return a1 - a2;
+		if (op.symbole==op.MULT) return a1 * a2;
+		if (op.symbole==op.DIV) return a1 / a2;
 		return 0;
 	}
 
-	double evalPlus(double a, double b) {
-		// TODO Auto-generated method stub
-		return a+b;
+	public void afficher_Operandes(){
+		System.out.println("Opérandes Stockées: " + pile);
+		
 	}
 
-	double evalMoins(double a, double b) {
-		// TODO Auto-generated method stub
-		return a-b;
-	}
 
-	double evalMult(double a, double b) {
-		// TODO Auto-generated method stub
-		return a*b;
-	}
-
-	double evalDiv(double a, double b) {
-		// TODO Auto-generated method stub
-		return a/b;
-	}
+	
 }
