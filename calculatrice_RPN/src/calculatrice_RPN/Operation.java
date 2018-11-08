@@ -9,20 +9,20 @@ public abstract class Operation extends element {// enum =Class avec un nombre d
 	final char MULT='*';
 	final char DIV='/';
 	
-	private String symbole;
+	private char symbole;
 	
 	
 	/*private Operation() {	
 		this.symbole =null;	
 	}
 	*/
-	private Operation(String s) {
+	protected Operation(char s) {
 		
 		this.symbole =s;
 		
 	}
 	
-	abstract double eval(double a, double b);
+	abstract double eval(double a, double b, char c);
 	abstract double evalPlus(double a, double b);
 	abstract double evalMoins(double a, double b);
 	abstract double evalMult(double a, double b);
