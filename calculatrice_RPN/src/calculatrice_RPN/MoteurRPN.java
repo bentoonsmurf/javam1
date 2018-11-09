@@ -11,14 +11,23 @@ public class MoteurRPN extends Operation{
 	private Stack<Double> pile;
 	
 	public MoteurRPN() {
-		super('+');
+		super(' ');
 		this.pile = new Stack<Double>();
 		
 	}// push(E)  pop()   peek() 
 	
 	public void empiler_chiffre(double c) {
+		try {  
+		 	 
+			if (c < this.MIN_VALUE || c > this.MAX_VALUE) {  
+				//throw new ExceptionNombreNonValide("bad value"); 
+			}  
+			this.pile.push(c);
+		} catch (NumberFormatException e) {  
+			// encapsulation de l'exception  
+			//throw new ExceptionNombreNonValide("parse error"); 
+		}  
 		
-		this.pile.push(c);
 	}
 
 	
