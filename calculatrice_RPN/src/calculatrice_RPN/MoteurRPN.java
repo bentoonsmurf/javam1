@@ -8,7 +8,7 @@ public class MoteurRPN extends Operation{
 	final double MIN_VALUE=1;
 
 	
-	private Stack<Double> pile;
+	public Stack<Double> pile;
 	
 	public MoteurRPN() {
 		super('+');
@@ -22,12 +22,12 @@ public class MoteurRPN extends Operation{
 	}
 
 	
-	public double eval (double a1,double a2 , Operation op) {
+	public double eval (double a1,double a2) {
 		
-		if (op.symbole==op.PLUS) return a1 + a2;
-		if (op.symbole==op.MOINS) return a1 - a2;
-		if (op.symbole==op.MULT) return a1 * a2;
-		if (op.symbole==op.DIV) return a1 / a2;
+		if (this.symbole==this.PLUS) return a1 + a2;
+		if (this.symbole==this.MOINS) return a1 - a2;
+		if (this.symbole==this.MULT) return a1 * a2;
+		if (this.symbole==this.DIV) return a1 / a2;
 		return 0;
 	}
 
