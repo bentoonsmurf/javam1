@@ -10,6 +10,25 @@ public class MoteurRPN extends Operation{
 	
 	private Stack<Double> pile;
 	
+	//Pile pile = new Pile(); 
+
+	//Object pile1=1; 
+	try
+		{ 
+		  if (isPileVide()) 
+		  	{
+	            System.out.println("Impossible de faire une operation car la pile est vide");
+	           System.exit(-1); 
+	        }
+		} 
+
+	catch (ExceptionPileVide v)
+		{ 
+			System.out.println("La pile est vide"+v); 
+		} 
+	
+	
+	
 	public MoteurRPN() {
 		super(' ');
 		this.pile = new Stack<Double>();
@@ -17,13 +36,17 @@ public class MoteurRPN extends Operation{
 	}// push(E)  pop()   peek() 
 	
 	public void empiler_chiffre(double c) {
-		try {  
-		 	 
-			if (c < this.MIN_VALUE || c > this.MAX_VALUE) {  
+		try 
+		
+		{  
+		 	 if (c < this.MIN_VALUE || c > this.MAX_VALUE) 
+			{  
 				//throw new ExceptionNombreNonValide("bad value"); 
 			}  
 			this.pile.push(c);
-		} catch (NumberFormatException e) {  
+		} 
+		catch (NumberFormatException e) 
+		{  
 			// encapsulation de l'exception  
 			//throw new ExceptionNombreNonValide("parse error"); 
 		}  
