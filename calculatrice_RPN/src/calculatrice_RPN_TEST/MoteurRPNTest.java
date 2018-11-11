@@ -59,10 +59,13 @@ public class MoteurRPNTest {
 	}
 	
 //https://www.baeldung.com/junit-assert-exception
-	/*@Test (expected = ArithmeticException.class)
+	@Test (expected = ArithmeticException.class)
 	public void testEvalDivise_0()  {
+		
 		cal.empiler_chiffre(0);
 		cal.empiler_chiffre(5);	
+		cal.symbole='/';
+		System.out.println(cal.eval(cal.pile.pop(), cal.pile.pop()));
 		cal.eval(cal.pile.pop(), cal.pile.pop());
 	}
 
@@ -75,11 +78,11 @@ public class MoteurRPNTest {
 	@Test (expected = ExceptionNombreNonValide.class) //classe à créer
 	public void testEmpiler_chiffre_Nombre_MINMAX() {
 		cal.empiler_chiffre(500);
-	}
+	}*/
 
 	@Test
 	public void testAfficher_Operandes() {
-		fail("Not yet implemented");
-	}*/
+		cal.afficher_Operandes();
+	}
 
 }

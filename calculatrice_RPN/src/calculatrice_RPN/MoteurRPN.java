@@ -13,21 +13,21 @@ public class MoteurRPN extends Operation{
 	//Pile pile = new Pile(); 
 
 	//Object pile1=1; 
-	try
-		{ 
-		  if (isPileVide()) 
-		  	{
-	            System.out.println("Impossible de faire une operation car la pile est vide");
-	           System.exit(-1); 
-	        }
-		} 
+/*	try
+	{ 
+	  if (isPileVide()) 
+	  	{
+            System.out.println("Impossible de faire une operation car la pile est vide");
+           System.exit(-1); 
+        }
+	} 
 
-	catch (ExceptionPileVide v)
-		{ 
-			System.out.println("La pile est vide"+v); 
-		} 
-	
-	
+catch (ExceptionPileVide v)
+	{ 
+		System.out.println("La pile est vide"+v); 
+	} 
+
+*/
 	
 	public MoteurRPN() {
 		super(' ');
@@ -64,7 +64,7 @@ public class MoteurRPN extends Operation{
 	}
 
 	public void afficher_Operandes(){
-		System.out.println("Opérandes Stockées: " + pile);
+		System.out.println("Opérandes Stockées: " + this.pile);
 		
 	}
 
