@@ -2,9 +2,9 @@ package calculatrice_RPN;
 
 public class Chiffre_reel extends element{
 	
-	private float val;
-	private static Chiffre_reel  max =new Chiffre_reel(Float.MAX_VALUE);
-	private static Chiffre_reel  min =new Chiffre_reel(Float.MIN_VALUE);
+	private double val;
+	private static Chiffre_reel  max =new Chiffre_reel(Double.MAX_VALUE);
+	private static Chiffre_reel  min =new Chiffre_reel(Double.MIN_VALUE);
 	
 	
 	public Chiffre_reel() {
@@ -13,7 +13,7 @@ public class Chiffre_reel extends element{
 		
 	}
 	
-	public Chiffre_reel(float a) {
+	public Chiffre_reel(double a) {
 		this.val=a;
 		
 		
