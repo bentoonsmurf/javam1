@@ -10,9 +10,6 @@ public class MoteurRPN extends Operation{
 	
 	public Stack<Double> pile;
 	
-	//Pile pile = new Pile(); 
-
-	//Object pile1=1; 
 /*	try
 	{ 
 	  if (isPileVide()) 
