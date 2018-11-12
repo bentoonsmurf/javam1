@@ -1,20 +1,8 @@
 
-all: etape3
-	javac CalculatriceRPN.java
+all:
+	javac element.java Operation.java Chiffre_reel.java SaisieRPN.java MoteurRPN.java CalculatriceRPN.java
 
-
-etape1:
-	javac element.java
-
-etape2: etape1
-	javac Operation.java
-	javac Chiffre_reel.java
-
-etape3: etape2
-	javac SaisieRPN.java
-	javac MoteurRPN.java
-
-rm_executable_java: 
+clean: 
 	rm *.class
 
 
