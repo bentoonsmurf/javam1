@@ -13,7 +13,8 @@ public class MoteurRPN extends Operation{
 	//Pile pile = new Pile(); 
 
 	//Object pile1=1; 
-	
+	/*
+	// soit ce try n'est pas au bon endroi soit il est faux
 	try
 		{ 
 		  if (isPileVide()) 
@@ -28,6 +29,7 @@ public class MoteurRPN extends Operation{
 			System.out.println("La pile est vide"+v); 
 		} 
 	
+	*/
 	
 	
 	public MoteurRPN() {

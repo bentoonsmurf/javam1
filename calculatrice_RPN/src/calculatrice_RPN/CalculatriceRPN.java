@@ -34,7 +34,8 @@ public class CalculatriceRPN {
 			}
 			toute_l_operation=toute_l_operation + " " + "entre";
 		}
-		
+		System.out.println("vous avez entre :" + toute_l_operation);
+		System.out.println("le resultat est " + m.pile.peek());
 	   }
 	
 	
