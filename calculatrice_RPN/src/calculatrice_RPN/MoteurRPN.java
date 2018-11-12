@@ -4,8 +4,8 @@ import java.util.Stack;
 
 public class MoteurRPN extends Operation{
 	
-	final double MAX_VALUE=100;
-	final double MIN_VALUE=1;
+	final double MAX_VALUE=Double.MAX_VALUE;
+	final double MIN_VALUE=Double.MIN_VALUE;
 
 	
 	public Stack<Double> pile;
@@ -36,20 +36,8 @@ catch (ExceptionPileVide v)
 	}// push(E)  pop()   peek() 
 	
 	public void empiler_chiffre(double c) {
-		try 
-		
-		{  
-		 	 if (c < this.MIN_VALUE || c > this.MAX_VALUE) 
-			{  
-				//throw new ExceptionNombreNonValide("bad value"); 
-			}  
+		 
 			this.pile.push(c);
-		} 
-		catch (NumberFormatException e) 
-		{  
-			// encapsulation de l'exception  
-			//throw new ExceptionNombreNonValide("parse error"); 
-		}  
 		
 	}
 

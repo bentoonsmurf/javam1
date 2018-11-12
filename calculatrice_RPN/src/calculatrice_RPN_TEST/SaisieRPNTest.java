@@ -7,6 +7,8 @@ import java.util.EmptyStackException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import calculatrice_RPN.ExceptionNombreNonValide;
 import calculatrice_RPN.SaisieRPN;
 
 public class SaisieRPNTest {
@@ -32,10 +34,14 @@ public class SaisieRPNTest {
 		System.out.println(test.isDouble(B));
 	}
 	
-	@Test (expected=EmptyStackException.class)
+	@Test (expected=NullPointerException.class)
 	public void pile_vide() {
-		
-		test.recuperer_donnees(); 
+		test.moteur.pile.push((double) 5);
+		test.calcul('+'); 
 	}
-
+	
+	@Test (expected = ExceptionNombreNonValide.class) //classe à créer
+	public void testEmpiler_chiffre_Nombre_MINMAX() throws ExceptionNombreNonValide{
+		test.ajouter_operande((double)500);
+	}
 }
