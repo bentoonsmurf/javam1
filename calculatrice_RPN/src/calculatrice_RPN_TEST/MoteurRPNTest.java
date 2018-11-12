@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import calculatrice_RPN.ExceptionNombreNonValide;
 import calculatrice_RPN.MoteurRPN;
 
 public class MoteurRPNTest {
@@ -59,27 +61,26 @@ public class MoteurRPNTest {
 	}
 	
 //https://www.baeldung.com/junit-assert-exception
-	/*@Test (expected = ArithmeticException.class)
+	@Test (expected = ArithmeticException.class)
 	public void testEvalDivise_0()  {
+		
 		cal.empiler_chiffre(0);
 		cal.empiler_chiffre(5);	
+		cal.symbole='/';
+		System.out.println(cal.eval(cal.pile.pop(), cal.pile.pop()));
 		cal.eval(cal.pile.pop(), cal.pile.pop());
 	}
 
-/*	@Test
+	/*@Test
 	public void testMoteurRPN() {
 		fail("Not yet implemented");
-	}
+	}*/
 
-	//https://anisfrikha.developpez.com/tutoriel/java/exceptions/
-	@Test (expected = ExceptionNombreNonValide.class) //classe à créer
-	public void testEmpiler_chiffre_Nombre_MINMAX() {
-		cal.empiler_chiffre(500);
-	}
+	
 
 	@Test
 	public void testAfficher_Operandes() {
-		fail("Not yet implemented");
-	}*/
+		cal.afficher_Operandes();
+	}
 
 }

@@ -4,8 +4,8 @@ import java.util.Stack;
 
 public class MoteurRPN extends Operation{
 	
-	final double MAX_VALUE=100;
-	final double MIN_VALUE=1;
+	final double MAX_VALUE=Double.MAX_VALUE;
+	final double MIN_VALUE=Double.MIN_VALUE;
 
 	
 	public Stack<Double> pile;
@@ -13,24 +13,21 @@ public class MoteurRPN extends Operation{
 	//Pile pile = new Pile(); 
 
 	//Object pile1=1; 
-	/*
-	// soit ce try n'est pas au bon endroi soit il est faux
-	try
-		{ 
-		  if (isPileVide()) 
-		  	{
-	            System.out.println("Impossible de faire une operation car la pile est vide");
-	           System.exit(-1); 
-	        }
-		} 
+/*	try
+	{ 
+	  if (isPileVide()) 
+	  	{
+            System.out.println("Impossible de faire une operation car la pile est vide");
+           System.exit(-1); 
+        }
+	} 
 
-	catch (ExceptionPileVide v)
-		{ 
-			System.out.println("La pile est vide"+v); 
-		} 
-	
-	*/
-	
+catch (ExceptionPileVide v)
+	{ 
+		System.out.println("La pile est vide"+v); 
+	} 
+
+*/
 	
 	public MoteurRPN() {
 		super(' ');
@@ -39,20 +36,8 @@ public class MoteurRPN extends Operation{
 	}// push(E)  pop()   peek() 
 	
 	public void empiler_chiffre(double c) {
-		try 
-		
-		{  
-		 	 if (c < this.MIN_VALUE || c > this.MAX_VALUE) 
-			{  
-				//throw new ExceptionNombreNonValide("bad value"); 
-			}  
+		 
 			this.pile.push(c);
-		} 
-		catch (NumberFormatException e) 
-		{  
-			// encapsulation de l'exception  
-			//throw new ExceptionNombreNonValide("parse error"); 
-		}  
 		
 	}
 
@@ -67,7 +52,7 @@ public class MoteurRPN extends Operation{
 	}
 
 	public void afficher_Operandes(){
-		System.out.println("Opérandes Stockées: " + pile);
+		System.out.println("Opérandes Stockées: " + this.pile);
 		
 	}
 
