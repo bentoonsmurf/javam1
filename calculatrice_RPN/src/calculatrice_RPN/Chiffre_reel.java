@@ -1,6 +1,6 @@
 package calculatrice_RPN;
 
-public class Chiffre_reel extends element{
+public class Chiffre_reel{
 	
 	private float val;
 	private static Chiffre_reel  max =new Chiffre_reel(Float.MAX_VALUE);
