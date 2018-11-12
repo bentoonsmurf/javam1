@@ -36,6 +36,7 @@ public class CalculatriceRPN {
 		}
 		System.out.println("vous avez entre :" + toute_l_operation);
 		System.out.println("le resultat est " + m.pile.peek());
+		
 	   }
 	
 	
