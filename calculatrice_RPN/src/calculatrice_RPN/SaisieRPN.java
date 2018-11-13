@@ -22,7 +22,36 @@ public class SaisieRPN {
 		while(str!="exit"){	//tant que l'utilisateur entre un élément différent de "exit"
 			//throws ExceptionNombreNonValide
 			
-			if(isDouble(str)){ // si la valeur entrée est un double
+			try{
+				if(str.length()==0 )
+					throw new StringIndexOutOfBoundsException();
+				
+				if(isDouble(str)){ // si la valeur entrée est un double
+					
+					ajouter_operande(Double.parseDouble( str ));
+					
+				}		
+				
+				else if(str.charAt(0)=='+'||str.charAt(0)=='-'||str.charAt(0)=='*'||str.charAt(0)=='/'){ //si la valeur entrée est parmis les 4 opérations acceptées								
+					
+					calcul(str.charAt(0));				
+				
+					moteur.afficher_Operandes();	
+					
+				}
+				
+				
+				else{ // si l'utilisateur entre une valeur non autorisée
+					System.out.println("Caractère non supporté! Veuillez svp entrer un nombre ou un caractère autorisé. \n");
+				
+				}
+				
+			}
+			catch(StringIndexOutOfBoundsException e){
+				System.out.println("Aucune valeur n'est entrée \n");
+				
+			}
+			/*if(isDouble(str)){ // si la valeur entrée est un double
 				
 				ajouter_operande(Double.parseDouble( str ));
 				
@@ -32,16 +61,16 @@ public class SaisieRPN {
 				
 				calcul(str.charAt(0));				
 			
-				System.out.println("opération effectuée : "+ str.charAt(0)); 
 				moteur.afficher_Operandes();	
 				
 			}
 			
 			
 			else{ // si l'utilisateur entre une valeur non autorisée
-				System.out.println("caractère non supporté! Veuillez svp entrer un nombre ou un caractère autorisé. \n");
+				System.out.println("Caractère non supporté! Veuillez svp entrer un nombre ou un caractère autorisé. \n");
 			
 			}
+			str=scanner.nextLine();*/
 			str=scanner.nextLine();
 		}
 		
@@ -76,14 +105,27 @@ public class SaisieRPN {
 	 	
 	 	
 	 	////////////Effectue le calcule en s'assurant que la pile n'est pas vide
-	 	public void calcul(char c){
+	 	public void calcul(char c) throws EmptyStackException{
+	 		double result;
 	 		try {
 	 			moteur.symbole=c; // modifier la valeur du symbole
+	 			if(moteur.pile.size()<2)// si la pile contient moins de 2 valeurs
+	 				throw new EmptyStackException();
+	 			
 		         a=moteur.pile.pop();
 		         b=moteur.pile.pop();
-		         moteur.pile.push(moteur.eval(b,a)); // effectuer l'opération avec les deux premiers éléments de la pile puis mettre le résultat dans la pile
-		         
-		      } catch (NullPointerException e) {
+		         result=moteur.eval(b,a);
+		         try {
+		           		 if (result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY)
+		                     throw new ArithmeticException();
+		           		moteur.pile.push(result); // effectuer l'opération avec les deux premiers éléments de la pile puis mettre le résultat dans la pile
+				        System.out.println("opération effectuée : "+ c);
+		             
+		         } catch (ArithmeticException ae) {
+		             System.out.println("ArithmeticException occured!");
+		         }
+		          
+		      } catch (EmptyStackException e) {
 		    	  
 		         System.out.println("Vous n'avez pas assez d'opérandes pour effectuer l'opération");
 		         
