@@ -3,18 +3,8 @@ package calculatrice_RPN;
 public class ExceptionNombreNonValide extends Exception{
 	
 	
-	public ExceptionNombreNonValide() {}  
-	
-	public ExceptionNombreNonValide(String message) {  
-		super(message); 
+	public ExceptionNombreNonValide() {
+		System.out.println("Le nombre entré doit être compris entre supérieur à 0");
 	}  
 	
-	public ExceptionNombreNonValide(Throwable cause) {  
-		super(cause); 
-	}  
-	
-	public ExceptionNombreNonValide(String message, Throwable cause) {  
-		super(message, cause); 
-	} 
-
 }

@@ -12,10 +12,10 @@ public class SaisieRPN {
 		String str;
 		scanner = new Scanner(System.in);
 		moteur= new MoteurRPN();
-		
+		boolean first_scan=false;
 		
 		System.out.println("Veuillez entrer une valeur puis appuyer sur ENTRER pour la valider ");
-		System.out.println("(Entrer 'exite' pour arrer le programme):");
+		System.out.println("(Entrer 'exit' pour arrer le programme):");
 		str=scanner.nextLine();
 		
 		
@@ -28,7 +28,7 @@ public class SaisieRPN {
 				
 			}		
 			
-			else if(str.charAt(0)=='+'||str.charAt(0)=='+'||str.charAt(0)=='*'||str.charAt(0)=='/'){ //si la valeur entrée est parmis les 4 opérations acceptées								
+			else if(str.charAt(0)=='+'||str.charAt(0)=='-'||str.charAt(0)=='*'||str.charAt(0)=='/'){ //si la valeur entrée est parmis les 4 opérations acceptées								
 				
 				calcul(str.charAt(0));				
 			
@@ -39,7 +39,7 @@ public class SaisieRPN {
 			
 			
 			else{ // si l'utilisateur entre une valeur non autorisée
-				System.out.println("caractère non supporté! Veuillez svp entre un nombre ou un caractère autorisé. \n");
+				System.out.println("caractère non supporté! Veuillez svp entrer un nombre ou un caractère autorisé. \n");
 			
 			}
 			str=scanner.nextLine();
@@ -54,23 +54,20 @@ public class SaisieRPN {
 		////////////////////ajouter l'opérande à la pile tout en vérifiant s'il appartient à l'intervale imposé
 		
 	 	public void ajouter_operande(double nombre) throws ExceptionNombreNonValide{
-	 		
-	 		try 
+
+			try 
 			
 			{  
-			 	 if (nombre< moteur.MIN_VALUE || nombre> moteur.MAX_VALUE) 
-					{  
-						throw new ExceptionNombreNonValide("Le nombre entré doit être compris entre "+moteur.MIN_VALUE+" et "+moteur.MAX_VALUE); 
-					}  
-			 	moteur.empiler_chiffre(nombre); // l'ajouter à la pile
+				if (nombre< moteur.MIN_VALUE || nombre> moteur.MAX_VALUE) 
+					throw new ExceptionNombreNonValide(); 
+				else	 
+		 	moteur.empiler_chiffre(nombre); // l'ajouter à la pile
+				} 
+			catch (ExceptionNombreNonValide  e) 
+			{  
+				
 			} 
-			catch (NumberFormatException e) 
-			{  
-				// encapsulation de l'exception  
-				throw new ExceptionNombreNonValide("Erreur"); 
-			}  
-			
-			
+	 		 
 			moteur.afficher_Operandes();
 	 	}
 	 	
@@ -84,7 +81,7 @@ public class SaisieRPN {
 	 			moteur.symbole=c; // modifier la valeur du symbole
 		         a=moteur.pile.pop();
 		         b=moteur.pile.pop();
-		         moteur.pile.push(moteur.eval(a, b)); // effectuer l'opération avec les deux premiers éléments de la pile puis mettre le résultat dans la pile
+		         moteur.pile.push(moteur.eval(b,a)); // effectuer l'opération avec les deux premiers éléments de la pile puis mettre le résultat dans la pile
 		         
 		      } catch (NullPointerException e) {
 		    	  
