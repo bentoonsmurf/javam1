@@ -15,7 +15,7 @@ public class SaisieRPN {
 		boolean first_scan=false;
 		
 		System.out.println("Veuillez entrer une valeur et  appuyer sur ENTRER pour  valider ");
-		System.out.println("(Entrer 'exit' pour arrer le programme):");
+		System.out.println("(Entrer 'exit' pour arreter le programme):");
 		str=scanner.nextLine();
 		
 		
