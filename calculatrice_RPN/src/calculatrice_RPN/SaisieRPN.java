@@ -106,6 +106,7 @@ public class SaisieRPN {
 	 	
 	 	////////////Effectue le calcule en s'assurant que la pile n'est pas vide
 	 	public void calcul(char c) throws EmptyStackException{
+	 		double result;
 	 		try {
 	 			moteur.symbole=c; // modifier la valeur du symbole
 	 			if(moteur.pile.size()<2)// si la pile contient moins de 2 valeurs
@@ -113,8 +114,17 @@ public class SaisieRPN {
 	 			
 		         a=moteur.pile.pop();
 		         b=moteur.pile.pop();
-		         moteur.pile.push(moteur.eval(b,a)); // effectuer l'opération avec les deux premiers éléments de la pile puis mettre le résultat dans la pile
-		         System.out.println("opération effectuée : "+ c); 
+		         result=moteur.eval(b,a);
+		         try {
+		           		 if (result == Double.POSITIVE_INFINITY || result == Double.NEGATIVE_INFINITY)
+		                     throw new ArithmeticException();
+		           		moteur.pile.push(result); // effectuer l'opération avec les deux premiers éléments de la pile puis mettre le résultat dans la pile
+				        System.out.println("opération effectuée : "+ c);
+		             
+		         } catch (ArithmeticException ae) {
+		             System.out.println("ArithmeticException occured!");
+		         }
+		          
 		      } catch (EmptyStackException e) {
 		    	  
 		         System.out.println("Vous n'avez pas assez d'opérandes pour effectuer l'opération");
