@@ -60,21 +60,6 @@ public class MoteurRPNTest {
 
 	}
 	
-//https://www.baeldung.com/junit-assert-exception
-	@Test (expected = ArithmeticException.class)
-	public void testEvalDivise_0()  {
-		
-		cal.empiler_chiffre(0);
-		cal.empiler_chiffre(5);	
-		cal.symbole='/';
-		System.out.println(cal.eval(cal.pile.pop(), cal.pile.pop()));
-		cal.eval(cal.pile.pop(), cal.pile.pop());
-	}
-
-	/*@Test
-	public void testMoteurRPN() {
-		fail("Not yet implemented");
-	}*/
 
 	
 

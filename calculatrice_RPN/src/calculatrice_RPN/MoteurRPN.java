@@ -10,24 +10,7 @@ public class MoteurRPN extends Operation{
 	
 	public Stack<Double> pile;
 	
-	//Pile pile = new Pile(); 
 
-	//Object pile1=1; 
-/*	try
-	{ 
-	  if (isPileVide()) 
-	  	{
-            System.out.println("Impossible de faire une operation car la pile est vide");
-           System.exit(-1); 
-        }
-	} 
-
-catch (ExceptionPileVide v)
-	{ 
-		System.out.println("La pile est vide"+v); 
-	} 
-
-*/
 	
 	public MoteurRPN() {
 		super(' ');
