@@ -51,26 +51,6 @@ public class SaisieRPN {
 				System.out.println("Aucune valeur n'est entrée \n");
 				
 			}
-			/*if(isDouble(str)){ // si la valeur entrée est un double
-				
-				ajouter_operande(Double.parseDouble( str ));
-				
-			}		
-			
-			else if(str.charAt(0)=='+'||str.charAt(0)=='-'||str.charAt(0)=='*'||str.charAt(0)=='/'){ //si la valeur entrée est parmis les 4 opérations acceptées								
-				
-				calcul(str.charAt(0));				
-			
-				moteur.afficher_Operandes();	
-				
-			}
-			
-			
-			else{ // si l'utilisateur entre une valeur non autorisée
-				System.out.println("Caractère non supporté! Veuillez svp entrer un nombre ou un caractère autorisé. \n");
-			
-			}
-			str=scanner.nextLine();*/
 			str=scanner.nextLine();
 		}
 		
