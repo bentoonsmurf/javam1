@@ -19,7 +19,7 @@ public class SaisieRPN {
 		str=scanner.nextLine();
 		
 		
-		while(str!="exit"){	//tant que l'utilisateur entre un élément différent de "exit"
+		while(!str.equals("exit")){	//tant que l'utilisateur entre un élément différent de "exit"
 			//throws ExceptionNombreNonValide
 			
 			try{
@@ -39,9 +39,9 @@ public class SaisieRPN {
 					moteur.afficher_Operandes();	
 					
 				}
-				
-				
+
 				else{ // si l'utilisateur entre une valeur non autorisée
+					System.out.println(str);
 					System.out.println("Caractère non supporté! Veuillez svp entrer un nombre ou un caractère autorisé. \n");
 				
 				}
@@ -53,7 +53,7 @@ public class SaisieRPN {
 			}
 			str=scanner.nextLine();
 		}
-		
+		System.out.println("Fin du programme ! \n");
 	}
 	
 	
