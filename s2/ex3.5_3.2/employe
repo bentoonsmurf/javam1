@@ -1,0 +1,11 @@
+
+
+class employe{
+	int salaire;
+	int anneAncienete;
+	
+	public int calculSalaire(){
+		return this.salaire + 20 * this.anneAncienete;
+	}
+	
+}

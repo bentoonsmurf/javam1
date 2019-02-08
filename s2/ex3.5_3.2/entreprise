@@ -1,0 +1,19 @@
+import java.util.ArrayList;
+import java.util.List;
+
+class entreprise{
+	
+	List<employe> personel;
+	
+	
+	int calculDesSalaires(){
+	int somme=0;
+		for(employe s : personel){
+			 somme =s.calcul;
+		}
+		return somme;
+	}
+	
+	
+	
+}

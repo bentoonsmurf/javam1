@@ -1,0 +1,12 @@
+
+
+class vendeur extends employe{
+
+	int commission;
+	
+	public int calculSalaire(){
+		return this.salaire + 20 * this.anneAncienete + this.commission;
+		
+	}
+	
+}
