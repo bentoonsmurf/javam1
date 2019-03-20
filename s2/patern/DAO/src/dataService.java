@@ -8,15 +8,15 @@ public class dataService {
 	 
 	 public dataService() {
 		 this.info=new ArrayList<>();
-		 this.fichierSauvergardeName="save.txt";
+		 this.fichierSauvergardeName="/home/user/Bureau/javam1/s2/patern/DAO/src/save.txt";
 	 }
-	 public String getname() {
+	 public String getFileName() {
 		 return this.fichierSauvergardeName;
 	 }
 	 
 	 public List<String> find(String id) {
 		 
-		 try{
+		 try{//"this.fichierSauvergardeName"
 			 InputStream flux=new FileInputStream(this.fichierSauvergardeName); 
 			 InputStreamReader lecture=new InputStreamReader(flux);
 			 BufferedReader buff=new BufferedReader(lecture);
@@ -24,8 +24,11 @@ public class dataService {
 			 while ((ligne=buff.readLine())!=null){
 			 	System.out.println(ligne);
 			 	String[] words = ligne.split(" ");
-			 	this.info.add(words[0]);
-			 	this.info.add(words[1]);
+			 	if (words[0].equals(id)) {
+			 		this.info.add(words[0]);
+			 		this.info.add(words[1]);
+			 	}
+			 	
 			 	
 			 }
 			 buff.close(); 
